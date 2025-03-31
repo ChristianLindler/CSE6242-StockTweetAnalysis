@@ -18,3 +18,29 @@
 
 5. **Visualization**
    I'd like to do React.JS for this. It is really easy and we could use D3 if y'all feel comfortable
+# Stock Market Sentiment Analysis Dashboard
+
+A React-based dashboard that visualizes stock market prices alongside sentiment analysis data from social media.
+
+## Overview
+
+This application combines stock price historical data with BERT-generated sentiment analysis from social media posts to help users understand the relationship between public sentiment and stock price movements.
+
+## Getting Started
+
+1. Clone the repository
+2. Install dependencies:
+   ```
+   npm install
+   ```
+3. Start the development server:
+   ```
+   npm run dev
+   ```
+4. Open your browser to the local development server
+
+## Building for Production
+
+```
+npm run build
+```
