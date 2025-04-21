@@ -22,7 +22,8 @@ Place these CSV files into the `stock-sentiment-app/public/` folder:
 ### Web App
 1. **Clone the repository**
 2. **Navigate to the project directory**
-3. **Install dependencies:**
+3. **Go to "stock-sentiment-app" directory**
+4. **Install dependencies:**
 
    ```bash
    npm install
@@ -35,7 +36,4 @@ Place these CSV files into the `stock-sentiment-app/public/` folder:
    npm run dev
    ```
 
-## Contributing
-
-Feel free to open issues or submit pull requests if you'd like to contribute to improving this application!
 
