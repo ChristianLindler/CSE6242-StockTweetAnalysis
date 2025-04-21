@@ -1,6 +1,6 @@
 {
   "name": "stock-sentiment-app",
-  "homepage": "https://github.com/ChristianLindler/CSE6242-StockTweetAnalysis",
+  "homepage": "https://ChristianLindler.github.io/CSE6242-StockTweetAnalysis",
   "private": true,
   "version": "0.0.0",
   "type": "module",
