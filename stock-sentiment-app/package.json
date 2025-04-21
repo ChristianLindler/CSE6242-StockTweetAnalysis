@@ -1,5 +1,6 @@
 {
   "name": "stock-sentiment-app",
+  "homepage": "https://github.com/ChristianLindler/CSE6242-StockTweetAnalysis",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -7,7 +8,9 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -15,6 +18,7 @@
     "@mui/icons-material": "^7.0.2",
     "@mui/material": "^7.0.2",
     "d3": "^7.9.0",
+    "gh-pages": "^6.3.0",
     "lodash": "^4.17.21",
     "papaparse": "^5.5.2",
     "react": "^19.0.0",
