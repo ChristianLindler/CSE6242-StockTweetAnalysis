@@ -49,11 +49,11 @@ const Dashboard = () => {
     (async () => {
       try {
         setLoading(true);
-        // const baseUrl = '/CSE6242-StockTweetAnalysis';
+        const baseUrl = '/CSE6242-StockTweetAnalysis';
 
         const [stocksRaw, sentimentRaw] = await Promise.all([
-          fetchCsv('./filtered_company_values.csv'),
-          fetchCsv('./processed_tweets.csv')
+          fetchCsv(`${baseUrl}/filtered_company_values.csv`),
+          fetchCsv(`${baseUrl}/processed_tweets.csv`)
         ]);
         const combineTickers = (symbol) => (symbol === 'GOOGL' ? 'GOOG' : symbol);
 

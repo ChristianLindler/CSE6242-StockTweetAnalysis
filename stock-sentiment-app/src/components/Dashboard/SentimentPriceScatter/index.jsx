@@ -75,8 +75,8 @@ const SentimentPriceScatter = ({
     }
 
     const reg = [
-      { x: -1, y: slope * -1 + intercept },
-      { x:  1, y: slope *  1 + intercept },
+      { x: -.2, y: slope * -1 + intercept },
+      { x:  .2, y: slope *  1 + intercept },
     ];
 
     return { points: pts, regLine: reg, r: corr };
@@ -85,7 +85,7 @@ const SentimentPriceScatter = ({
   // ── visual tweaks ───────────────────────────────────────────────────
   const sentimentColor = '#4CAF50';
   const lineColor      = '#FF9800';
-  const ticksX         = [-1, -0.5, 0, 0.5, 1];
+  const ticksX         = [-0.2, -0.10, 0, 0.10, 0.2];
 
   return (
     <>
@@ -106,7 +106,7 @@ const SentimentPriceScatter = ({
             <XAxis
               dataKey="x"
               type="number"
-              domain={[-1, 1]}
+              domain={[-0.2, 0.2]}
               ticks={ticksX}
               tick={{ fontSize: 12 }}
               tickMargin={8}
