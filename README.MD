@@ -9,7 +9,7 @@ https://christianlindler.github.io/CSE6242-StockTweetAnalysis/
 The git repository is at:
 https://github.com/ChristianLindler/CSE6242-StockTweetAnalysis/
 
-#INSTALLATION
+# INSTALLATION
 1. Clone this repository:
    git clone https://github.com/ChristianLindler/CSE6242-StockTweetAnalysis.git
 2. Navigate to the web app folder:
@@ -21,7 +21,7 @@ https://github.com/ChristianLindler/CSE6242-StockTweetAnalysis/
 4. Install dependencies:
    npm install
 
-#EXECUTION
+# EXECUTION
 1. Start the development server:
    npm run dev
 2. Open your browser to http://localhost:3000 (or the port Vite reports) to view the dashboard.
