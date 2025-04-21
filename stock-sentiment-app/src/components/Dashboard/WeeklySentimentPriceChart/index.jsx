@@ -111,7 +111,7 @@ const WeeklySentimentPriceChart = ({ sentimentData, stockData }) => {
             />
             <Tooltip
               formatter={(value, name) => {
-                if (name === 'score') {
+                if (name === 'Avg Sentiment') {
                   return [(value / SCALE).toFixed(2), 'Avg Sentiment'];
                 } else {
                   return [`${value.toFixed(2)}%`, 'Price Change'];

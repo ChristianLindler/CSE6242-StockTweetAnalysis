@@ -13,7 +13,7 @@ import Papa from 'papaparse';
 
 import StockPriceChart from './StockPriceChart';
 import SentimentDistributionChart from './SentimentDistributionChart';
-import PostVolumeChart from './PostVolumeChart';
+import SentimentPriceScatter from './SentimentPriceScatter';
 import WeeklySentimentPriceChart from './WeeklySentimentPriceChart';
 
 const Dashboard = () => {
@@ -49,14 +49,25 @@ const Dashboard = () => {
     (async () => {
       try {
         setLoading(true);
+        // const baseUrl = '/CSE6242-StockTweetAnalysis';
+
         const [stocksRaw, sentimentRaw] = await Promise.all([
           fetchCsv('./filtered_company_values.csv'),
           fetchCsv('./processed_tweets.csv')
         ]);
+        const combineTickers = (symbol) => (symbol === 'GOOGL' ? 'GOOG' : symbol);
 
-        // parse dates
-        const stocks = stocksRaw.map(r => ({ ...r, date: new Date(r.day_date) }));
-        const sentiment = sentimentRaw.map(r => ({ ...r, date: new Date(r.post_date) }));
+        const stocks = stocksRaw.map(r => ({
+          ...r,
+          date: new Date(r.day_date),
+          ticker_symbol: combineTickers(r.ticker_symbol),
+        }));
+
+        const sentiment = sentimentRaw.map(r => ({
+          ...r,
+          date: new Date(r.post_date),
+          ticker_symbol: combineTickers(r.ticker_symbol),
+        }));
 
         setStockData(stocks);
         setSentimentData(sentiment);
@@ -152,9 +163,9 @@ const Dashboard = () => {
       <Grid size={4}>
         <Paper sx={{ p: 2 }}>
           <Typography variant="h6" align="center" gutterBottom>
-            Social Media Post Volume
+            Sentiment Lag Correlation
           </Typography>
-          <PostVolumeChart rawData={filteredSentiment} colors={colors} />
+          <SentimentPriceScatter sentimentData={filteredSentiment} stockData={filteredStocks} horizon={1}/>
         </Paper>
       </Grid>
 
