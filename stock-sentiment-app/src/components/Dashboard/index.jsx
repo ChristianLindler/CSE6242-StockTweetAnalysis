@@ -14,6 +14,7 @@ import Papa from 'papaparse';
 import StockPriceChart from './StockPriceChart';
 import SentimentDistributionChart from './SentimentDistributionChart';
 import PostVolumeChart from './PostVolumeChart';
+import WeeklySentimentPriceChart from './WeeklySentimentPriceChart';
 
 const Dashboard = () => {
   const [stockData, setStockData] = useState([]);
@@ -132,9 +133,9 @@ const Dashboard = () => {
       <Grid size={8}>
         <Paper sx={{ p: 2 }}>
           <Typography variant="h6" align="center" gutterBottom>
-            Stock Price
+            Sentiment Score and Weekly Price Changes
           </Typography>
-          <StockPriceChart rawData={filteredStocks} colors={colors} />
+          <WeeklySentimentPriceChart sentimentData={filteredSentiment} stockData={filteredStocks} />
         </Paper>
       </Grid>
 
@@ -154,6 +155,15 @@ const Dashboard = () => {
             Social Media Post Volume
           </Typography>
           <PostVolumeChart rawData={filteredSentiment} colors={colors} />
+        </Paper>
+      </Grid>
+
+      <Grid size={4}>
+        <Paper sx={{ p: 2 }}>
+          <Typography variant="h6" align="center" gutterBottom>
+            Stock Price
+          </Typography>
+          <StockPriceChart rawData={filteredStocks} colors={colors} />
         </Paper>
       </Grid>
     </Grid>
